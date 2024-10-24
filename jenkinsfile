@@ -23,7 +23,6 @@ steps{
 script {
 echo "Tests passed"
 }
-
 }
 }
 stage('Publish Image') {
