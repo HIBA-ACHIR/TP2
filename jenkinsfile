@@ -1,6 +1,6 @@
 pipeline {
 environment {
-registry = "HIBA-ACHIR/TP2"
+registry = "hibatallahachir/TP2"
 registryCredential = 'hiba_docker'
 dockerImage = ''
 }
