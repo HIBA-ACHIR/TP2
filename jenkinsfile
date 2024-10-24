@@ -21,9 +21,9 @@ dockerImage = docker.build registry + ":$BUILD_NUMBER"
 stage('Test image') {
 steps{
 script {
-
 echo "Tests passed"
 }
+
 }
 }
 stage('Publish Image') {
@@ -33,6 +33,11 @@ docker.withRegistry( '', registryCredential ) {
 dockerImage.push()
 }
 }
+}
+}
+stage('Deploy image') {
+steps{
+bat "docker run -d $registry:$BUILD_NUMBER"
 }
 }
 }
